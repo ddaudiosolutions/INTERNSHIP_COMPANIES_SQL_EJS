@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href="/table.css">
+    <link rel='stylesheet' href="/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" id="sortDate">Curso</th>
+                <th scope="col" id="sortName">Nombre</th>              
+                <th scope="col" >Localidad</th> 
+                <th scope="col">Email_Alumno</th>
+                <th scope="col">Contacto Alumno</th>       
+                <th scope="col">Practicas</th>
+                <th scope="col">Empresa</th>
+                <th scope="col">Contacto Emp.</th>
+                <th scope="col">Editar</th>    
+            </tr>
+        </thead>
+        <tbody class="tableAlumnos" id="listado_Alumnos">
+            <% for (let alumno of alumnos)  {%>
+               <tr> 
+                <td><%= alumno.cursoAl%></td>
+                <td> <%= alumno.nombreAl%></td>
+                <td><%= alumno.localidadAl%></td>
+                <td> <%= alumno.emailAl %></td>
+                <td> <%= alumno.movilAl %></td>
+                <td><%= alumno.practicas%></td>
+                <td><%= alumno.empresaAl%></td>
+                <td> <%= alumno.contactoEmp%></td> 
+                <td> <div class="btn btn-primary">Editar</div> </td>
+               </tr>
+                 
+              <% } %>
+            
+        </tbody>
+       
+    </table>
+
+   <!---  <button type="button" id="sortar">Sort</button> -->
+    <button type="button" class="btn btn-success" onclick="window.location='/'">Volver al Menu</button>
+
+    <!-- <script src="/js/mostrarAlumnos.js" type="module"></script> -->
+    
+</body>
+</html>

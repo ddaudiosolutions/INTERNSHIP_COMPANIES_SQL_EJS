@@ -1,0 +1,76 @@
+<% layout('layouts/boilerplate')%>
+
+  <div class="contenedor">
+    <div class="row mb-3">
+      <h2 class="text-center">BASE DE DATOS ALUMNOS EMPRESAS PRÁCTICAS </h2>
+    </div>
+    <div class="row justify-content-md-center" style="padding-bottom: 35px;"> 
+
+                <div class="col-md-2 text-center">
+                  <a href="/alumnos/listadoalumnos" class="btn  btn-primary btn-block ">Alumnos</a>
+                </div>   
+                <div class="col-md-2 text-center">
+                    <a href="/empresas/listadoempresas" class="btn  btn-warning btn-block ">Empresas</a>
+                </div>
+                <div class="col-md-2  text-center">
+                    <a href="/alumnos/nuevoalumno" class="btn btn-danger btn-block">Nuevo Alumno</a>
+                </div>
+                <div class="col-md-2  text-center">
+                  <a href="/empresas/nuevaempresa" class="btn  btn-primary btn-block ">Nueva Empresa</a>
+                </div>   
+    </div> 
+  </div>
+  
+<div class="container">
+  <div class="row">
+    <div class="bg-primary text-center">
+      <h2 class="mt-2">BUSCADOR DE PRÁCTICAS</h2>
+    </div>
+  </div>
+
+      
+    <div id="Buscador" class="row col-md-12 offset-md-4" style="margin-top: 20px">
+      
+      <div class="form-group col-md-2">
+        <label for="curso">Curso</label>
+        <select class="form-control" id="curso">
+          <option value="">Seleccione</option>
+          <option value="CFGSS">CFGSS</option>
+          <option value="CFGSR">CFGSR</option>
+          <option value="CFGSI">CFGSI</option>
+          <option value="CFGSA">CFGSA</option>
+          <option value="CFGSP">CFGSP</option>
+          <option value="CFGMVDJ">CFGMVDJ</option>
+        </select>
+      </div>
+
+        <div class="form-group col-md-2">
+            <label for="practicas">Prácticas</label>
+            <select class="form-control" id="practicas">
+              <option value="">Seleccione</option>
+              <option value="sonido_ficcion">Sonido_Ficción</option>
+              <option value="sonido_directo">Sonido_Directo</option>
+              <option value="estudio">Estudio</option>
+              <option value="radio">Radio</option>
+              <option value="television">Televisión</option>
+              <option value="teatro">Teatro</option>
+             </select>
+        </div> 
+    </div>
+    <button id="btnBuscar" class="btn btn-success col-md-2 offset-md-5 mt-3" > BUSCAR </button>
+
+  </div>
+
+    <div class="container">
+      <div class="row">
+        <table class="table table-hover">
+
+          <tbody id="listado_Empresas"> LISTADO DE EMPRESAS </tbody>
+
+        </table> 
+    </div>
+
+  </div> 
+   
+
+
