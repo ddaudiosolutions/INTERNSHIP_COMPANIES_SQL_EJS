@@ -28,7 +28,7 @@ app.use(express.urlencoded({extended: true}));//DEBE IR SIEMPRE ANTES DEL ROUTER
 app.use('/', router);
 
 //PUERTO Y HOST PARA LA APP EN DEPLOYMENT
-const host = process.env.HOST || '0.0.0.0';
+const host = process.env.HOST;
 
 const port = process.env.PORT || 4000;
 app.listen(port, host, ()=> {
