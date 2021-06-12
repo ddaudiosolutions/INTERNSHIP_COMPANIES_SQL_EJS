@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel='stylesheet' href="/table.css">
-    <link rel='stylesheet' href="/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+<% layout('layouts/boilerplate')%>
+    <h2 class="text-center bg-warning">LISTADO DE ALUMNOS EN PRÁCTICAS</h2>
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -20,7 +11,8 @@
                 <th scope="col">Practicas</th>
                 <th scope="col">Empresa</th>
                 <th scope="col">Contacto Emp.</th>
-                <th scope="col">Editar</th>    
+                <th scope="col">Mostrar</th> 
+                <th scope="col">Editar</th   
             </tr>
         </thead>
         <tbody class="tableAlumnos" id="listado_Alumnos">
@@ -34,11 +26,12 @@
                 <td><%= alumno.practicas%></td>
                 <td><%= alumno.empresaAl%></td>
                 <td> <%= alumno.contactoEmp%></td> 
-                <td> <div class="btn btn-primary">Editar</div> </td>
+                <td> <a class="btn btn-primary" type="submint" href="/alumnos/mostraralumno/<%=alumno.id %>"> Mostrar </a> </td>
+                <td> <a class="btn btn-primary" type="submint" href="/alumnos/editaralumno/<%=alumno.id %>"> Editar </a> </td>
                </tr>
                  
               <% } %>
-            
+              
         </tbody>
        
     </table>
@@ -47,6 +40,3 @@
     <button type="button" class="btn btn-success" onclick="window.location='/'">Volver al Menu</button>
 
     <!-- <script src="/js/mostrarAlumnos.js" type="module"></script> -->
-    
-</body>
-</html>

@@ -4,6 +4,9 @@ import db from './config/db.js';
 import ejs from 'ejs';
 import ejsMate from 'ejs-mate';
 
+import dotenv from 'dotenv'
+dotenv.config({path: 'variables.env'})
+
 const app = express()
 
 db.authenticate()
@@ -11,7 +14,7 @@ db.authenticate()
     .catch (error => console.log(error))
 
     
-const port = process.env.PORT || 4000;
+
 
 
 
@@ -24,7 +27,10 @@ app.use(express.urlencoded({extended: true}));//DEBE IR SIEMPRE ANTES DEL ROUTER
 
 app.use('/', router);
 
+//PUERTO Y HOST PARA LA APP EN DEPLOYMENT
+const host = process.env.HOST || '0.0.0.0';
 
-app.listen(port, ()=> {
+const port = process.env.PORT || 4000;
+app.listen(port, host, ()=> {
     console.log(`Console Running on ${port}`)
 })

@@ -1,28 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel='stylesheet' href="/table.css"
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body id="body1">
+<% layout('layouts/boilerplate')%>
+<h2 class="text-center bg-warning">LISTADO DE EMPRESAS DE PRÁCTICAS</h2>
      <table class="table table-hover">
         <thead class="thead-dark">
             <tr>                
-                <!-- <th scope="col">ID</th>
-                <th scope="col">GM</th>
-                <th scope="col">GSR</th>              
-                <th scope="col">GSI</th> 
-                <th scope="col">GSS</th>
-                <th scope="col"> GSA</th>       
-                <th scope="col">GSP</th> -->
+                
                 <th scope="col">Empresa</th>
                 <th scope="col">Contacto</th>
                 <th scope="col">E-MAIL</th>
                 <th scope="col">TELEFONO</th>
                 <th scop="col">PRACTICAS</th>
+                <th scope="col">Mostrar</th> 
                 <th scope="col">Editar</th>    
             </tr>
         </thead>
@@ -34,7 +21,8 @@
                  <td><%= empresa.EMAIL%></td>
                  <td> <%= empresa.TELEFONO %></td>
                  <td> <%= empresa.PRACTICAS %></td>
-                
+                 <td> <a class="btn btn-primary" type="submint" href="/empresas/mostrarempresa/<%=empresa.id %>"> Mostrar </a> </td>
+                 <td> <a class="btn btn-primary" type="submint" href="/empresas/editarempresa/<%=empresa.id %>"> Editar </a> </td>
                 </tr>
                    
                <% } %>
@@ -48,6 +36,4 @@
     <button type="button" class="btn btn-success" onclick="window.location='/'">Volver al Menu</button>
 
     
-    <script src="/js/mostrarEmpresas.js" type="module"></script>
-</body>
-</html>
+    
