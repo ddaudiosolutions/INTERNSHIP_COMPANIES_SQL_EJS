@@ -26,8 +26,8 @@
                 <td><%= alumno.practicas%></td>
                 <td><%= alumno.empresaAl%></td>
                 <td> <%= alumno.contactoEmp%></td> 
-                <td> <a class="btn btn-primary" type="submint" href="/alumnos/mostraralumno/<%=alumno.id %>"> Mostrar </a> </td>
-                <td> <a class="btn btn-primary" type="submint" href="/alumnos/editaralumno/<%=alumno.id %>"> Editar </a> </td>
+                <td> <a class="btn btn-outline-dark" type="submint" href="/alumnos/mostraralumno/<%=alumno.id %>"> Mostrar </a> </td>
+                <td> <a class="btn btn-outline-danger" type="submint" href="/alumnos/editaralumno/<%=alumno.id %>"> Editar </a> </td>
                </tr>
                  
               <% } %>
@@ -37,6 +37,6 @@
     </table>
 
    <!---  <button type="button" id="sortar">Sort</button> -->
-    <button type="button" class="btn btn-success" onclick="window.location='/'">Volver al Menu</button>
+    <button type="button" class="btn btn-outline-success" onclick="window.location='/'">Volver al Menu</button>
 
     <!-- <script src="/js/mostrarAlumnos.js" type="module"></script> -->
