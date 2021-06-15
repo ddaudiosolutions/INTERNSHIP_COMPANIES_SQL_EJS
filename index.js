@@ -13,11 +13,6 @@ db.authenticate()
     .then (()=> console.log('Base de datos Conectada'))
     .catch (error => console.log(error))
 
-    
-
-
-
-
 // AGREGAR BODYPARSER PARA LEER LOS DATOS DEL FORMULARIO
 app.engine('ejs', ejsMate)
 app.set('view engine', 'ejs');

@@ -1,3 +1,4 @@
 /node_modules
-/viewspug
+
 variables.env
+.DS_Store
