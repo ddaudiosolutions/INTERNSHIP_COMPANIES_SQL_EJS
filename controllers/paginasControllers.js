@@ -54,7 +54,7 @@ const paginaEditarAlumno = async(req, res)=>{
         try
         {const editarDetallesAlumno = await Alumno.findAll({attributes: ['cursoAl','nombreAl','localidadAl', 'emailAl', 
                 'empresaAl', 'contactoEmp', 'practicas', 'OBSERVACIONES', 'id'], 
-            where:{id: idValueAl}})
+            where:{id: id}})
             editarDetallesAlumno.forEach(alumno=>(console.log(alumno.id)))        
             res.render('alumnos/editaralumno', {editarDetallesAlumno,})}
         catch (error){
@@ -66,7 +66,7 @@ const paginaEditarEmpresa = async(req, res)=> {
     const {id} = req.params
     let idEmp = id;
     try{
-        const editardetallesEmpresa = await Empresa.findAll({attributes: ['EMPRESA', 'CONTACTO', 'EMAIL', 'TELEFONO', 'PRACTICAS', 'OBSERVACIONES', 'id'], where:{id: idEmp}})
+        const editardetallesEmpresa = await Empresa.findAll({attributes: ['EMPRESA', 'CONTACTO', 'EMAIL', 'TELEFONO', 'PRACTICAS', 'OBSERVACIONES', 'id'], where:{id: id}})
         editardetallesEmpresa.forEach(empresa => (console.log(empresa)))
         res.render('empresas/editarempresa', {editardetallesEmpresa})
     }
