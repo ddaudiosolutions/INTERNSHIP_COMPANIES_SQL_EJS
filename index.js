@@ -7,6 +7,14 @@ import ejsMate from 'ejs-mate';
 import dotenv from 'dotenv'
 dotenv.config({path: 'variables.env'})
 
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+
+
+
 const app = express()
 
 db.authenticate()
@@ -15,9 +23,13 @@ db.authenticate()
 
 // AGREGAR BODYPARSER PARA LEER LOS DATOS DEL FORMULARIO
 app.engine('ejs', ejsMate)
+
+
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'))
+app.set('views', __dirname + '/views');
+
 app.use(express.urlencoded({extended: true}));//DEBE IR SIEMPRE ANTES DEL ROUTER
 
 app.use('/', router);
